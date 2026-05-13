@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Abroad Guide — Nepali Students</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0c10;
+  --bg2: #111318;
+  --bg3: #181c24;
+  --border: rgba(255,255,255,0.07);
+  --text: #e8eaf0;
+  --muted: #7a7f8e;
+  --accent: #f5c518;
+  --accent2: #3b82f6;
+  --accent3: #10b981;
+  --accent4: #f97316;
+  --danger: #ef4444;
+  --card-shadow: 0 4px 40px rgba(0,0,0,0.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:2rem 1.5rem;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(59,130,246,0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 80% 80%, rgba(245,197,24,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 60%, rgba(16,185,129,0.07) 0%, transparent 60%),
+    var(--bg);
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size:40px 40px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+}
+.hero-content{position:relative;z-index:1;max-width:800px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(245,197,24,0.1);
+  border:1px solid rgba(245,197,24,0.3);
+  border-radius:100px;
+  padding:6px 16px;
+  font-size:12px;font-weight:500;
+  color:var(--accent);
+  margin-bottom:1.5rem;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.8rem,8vw,5.5rem);
+  font-weight:900;
+  line-height:1.05;
+  margin-bottom:1.5rem;
+  background:linear-gradient(135deg, #fff 0%, #c9d1e3 50%, var(--accent) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero p{
+  font-size:clamp(1rem,2.5vw,1.2rem);
+  color:var(--muted);
+  max-width:580px;
+  margin:0 auto 2.5rem;
+  font-weight:300;
+}
+.profile-pill{
+  display:inline-flex;flex-wrap:wrap;gap:8px;justify-content:center;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:1rem 1.5rem;
+  margin-bottom:2.5rem;
+}
+.pill-item{
+  background:rgba(255,255,255,0.06);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:4px 12px;
+  font-size:12px;
+  font-family:'JetBrains Mono',monospace;
+}
+.pill-ok{border-color:rgba(16,185,129,0.4);color:#6ee7b7}
+.pill-warn{border-color:rgba(245,197,24,0.4);color:var(--accent)}
+.pill-info{border-color:rgba(59,130,246,0.4);color:#93c5fd}
+.scroll-hint{
+  color:var(--muted);font-size:13px;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  animation:bounce 2s infinite;
+}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* ── NAV ── */
+.sticky-nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,12,16,0.9);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:0.75rem 1.5rem;
+  display:flex;
+  gap:6px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.sticky-nav::-webkit-scrollbar{display:none}
+.nav-btn{
+  flex-shrink:0;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:6px 14px;
+  color:var(--muted);
+  font-size:13px;font-weight:500;
+  cursor:pointer;
+  transition:all .2s;
+  font-family:'DM Sans',sans-serif;
+  white-space:nowrap;
+}
+.nav-btn:hover,.nav-btn.active{
+  background:rgba(245,197,24,0.1);
+  border-color:rgba(245,197,24,0.4);
+  color:var(--accent);
+}
+
+/* ── SECTIONS ── */
+.section{
+  max-width:900px;
+  margin:0 auto;
+  padding:4rem 1.5rem;
+}
+.section-header{
+  margin-bottom:3rem;
+  text-align:center;
+}
+.section-label{
+  font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:2px;
+  color:var(--accent2);
+  margin-bottom:.75rem;
+  font-family:'JetBrains Mono',monospace;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,5vw,3rem);
+  font-weight:700;
+  line-height:1.15;
+}
+.section-sub{
+  color:var(--muted);
+  font-size:15px;
+  margin-top:.75rem;
+  font-weight:300;
+}
+
+/* ── COUNTRY CARDS (first 3) ── */
+.countries-grid{display:flex;flex-direction:column;gap:2.5rem}
+.country-card{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+}
+.country-card:hover{transform:translateY(-4px);box-shadow:var(--card-shadow)}
+.card-header{
+  padding:2rem;
+  display:flex;
+  align-items:flex-start;
+  gap:1.25rem;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+.card-flag{font-size:52px;line-height:1;flex-shrink:0}
+.card-title-group{flex:1}
+.card-country{
+  font-family:'Playfair Display',serif;
+  font-size:1.8rem;
+  font-weight:700;
+  line-height:1;
+  margin-bottom:4px;
+}
+.card-tagline{color:var(--muted);font-size:13px;font-weight:300}
+.card-rank{
+  position:absolute;top:1.5rem;right:1.5rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  padding:4px 10px;
+  border-radius:100px;
+  font-weight:500;
+}
+.rank-best{background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);color:#6ee7b7}
+.rank-good{background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:#93c5fd}
+.rank-budget{background:rgba(245,197,24,0.15);border:1px solid rgba(245,197,24,0.3);color:var(--accent)}
+.card-body{padding:2rem}
+
+/* Stats row */
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-bottom:1.75rem;
+}
+@media(max-width:480px){.stats-row{grid-template-columns:repeat(2,1fr)}}
+.stat-box{
+  background:var(--bg3);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.875rem;
+  text-align:center;
+}
+.stat-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.stat-val{font-size:13px;font-weight:600;color:var(--text);font-family:'JetBrains Mono',monospace}
+
+/* Verdict band */
+.verdict{
+  border-radius:12px;
+  padding:1rem 1.25rem;
+  margin-bottom:1.75rem;
+  font-size:13px;
+  line-height:1.65;
+  font-weight:400;
+}
+.verdict-best-style{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);color:#a7f3d0}
+.verdict-good-style{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);color:#bfdbfe}
+.verdict-budget-style{background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);color:#fde68a}
+
+/* Pros/Cons */
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.75rem}
+@media(max-width:560px){.pros-cons{grid-template-columns:1fr}}
+.pros-panel,.cons-panel{
+  border-radius:12px;
+  padding:1rem 1.25rem;
+}
+.pros-panel{background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15)}
+.cons-panel{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15)}
+.panel-title{
+  font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;
+  margin-bottom:.75rem;
+  font-family:'JetBrains Mono',monospace;
+}
+.pros-panel .panel-title{color:#6ee7b7}
+.cons-panel .panel-title{color:#fca5a5}
+.li{
+  font-size:13px;color:var(--text);
+  margin-bottom:6px;
+  padding-left:16px;
+  position:relative;
+  line-height:1.5;
+}
+.li::before{
+  content:"→";
+  position:absolute;left:0;
+  font-size:10px;
+  top:2px;
+}
+.pros-panel .li::before{color:#6ee7b7}
+.cons-panel .li::before{color:#fca5a5}
+
+/* PR Box */
+.pr-box{
+  background:rgba(59,130,246,0.06);
+  border:1px solid rgba(59,130,246,0.2);
+  border-radius:12px;
+  padding:1.25rem;
+  margin-bottom:1.75rem;
+}
+.pr-title{
+  font-size:13px;font-weight:600;
+  color:var(--accent2);
+  margin-bottom:1rem;
+  display:flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;
+  text-transform:uppercase;letter-spacing:.5px;
+}
+.pr-step{
+  display:flex;gap:10px;
+  margin-bottom:8px;
+  font-size:13px;
+  line-height:1.5;
+}
+.step-num{
+  flex-shrink:0;
+  width:22px;height:22px;
+  background:rgba(59,130,246,0.2);
+  border:1px solid rgba(59,130,246,0.3);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;
+  color:var(--accent2);
+  margin-top:1px;
+  font-family:'JetBrains Mono',monospace;
+}
+.pr-note{
+  margin-top:.875rem;
+  padding-top:.875rem;
+  border-top:1px solid rgba(59,130,246,0.15);
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.6;
+}
+.pr-time{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(245,197,24,0.1);
+  border:1px solid rgba(245,197,24,0.2);
+  border-radius:8px;
+  padding:3px 10px;
+  font-size:11px;
+  color:var(--accent);
+  margin-bottom:8px;
+  font-family:'JetBrains Mono',monospace;
+}
+
+/* Profile fit box */
+.profile-box{
+  background:var(--bg3);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1.25rem;
+  margin-bottom:1.75rem;
+}
+.profile-box-title{
+  font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;
+  color:var(--muted);margin-bottom:.75rem;
+  font-family:'JetBrains Mono',monospace;
+}
+.fit-line{font-size:13px;color:var(--text);margin-bottom:5px;line-height:1.5}
+.fit-ok{color:#6ee7b7}
+.fit-warn{color:var(--accent)}
+.fit-info{color:#93c5fd}
+
+/* Language box */
+.lang-box{
+  background:rgba(249,115,22,0.06);
+  border:1px solid rgba(249,115,22,0.2);
+  border-radius:12px;
+  padding:1.25rem;
+}
+.lang-title{
+  font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;
+  color:var(--accent4);
+  margin-bottom:.5rem;
+  font-family:'JetBrains Mono',monospace;
+}
+.lang-text{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ── TABS for recommended countries ── */
+.tabs-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.tab-nav{
+  display:flex;
+  overflow-x:auto;
+  scrollbar-width:none;
+  border-bottom:1px solid var(--border);
+  background:var(--bg3);
+}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-btn{
+  flex-shrink:0;
+  padding:.875rem 1.25rem;
+  font-size:13px;font-weight:500;
+  color:var(--muted);
+  cursor:pointer;
+  border:none;
+  background:transparent;
+  font-family:'DM Sans',sans-serif;
+  border-bottom:2px solid transparent;
+  transition:all .2s;
+  white-space:nowrap;
+}
+.tab-btn:hover{color:var(--text)}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);background:rgba(245,197,24,0.04)}
+.tab-content{display:none;padding:2rem}
+.tab-content.active{display:block}
+
+/* ── COMPARISON TABLE ── */
+.compare-table-wrap{overflow-x:auto;margin-top:2rem}
+.compare-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+  min-width:640px;
+}
+.compare-table th{
+  background:var(--bg3);
+  border:1px solid var(--border);
+  padding:.875rem 1rem;
+  text-align:left;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  color:var(--muted);
+  white-space:nowrap;
+}
+.compare-table td{
+  border:1px solid var(--border);
+  padding:.875rem 1rem;
+  vertical-align:top;
+  line-height:1.5;
+}
+.compare-table tr:hover td{background:rgba(255,255,255,0.02)}
+.compare-table .flag-cell{font-size:20px;white-space:nowrap}
+.compare-table .country-cell{font-weight:600}
+.tag{
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:5px;
+  font-size:11px;
+  font-weight:500;
+  margin:1px;
+}
+.tag-green{background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.2)}
+.tag-red{background:rgba(239,68,68,0.15);color:#fca5a5;border:1px solid rgba(239,68,68,0.2)}
+.tag-yellow{background:rgba(245,197,24,0.15);color:#fde68a;border:1px solid rgba(245,197,24,0.2)}
+.tag-blue{background:rgba(59,130,246,0.15);color:#93c5fd;border:1px solid rgba(59,130,246,0.2)}
+
+/* ── SELF-APPLY GUIDE ── */
+.self-apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:560px){.self-apply-grid{grid-template-columns:1fr}}
+.apply-card{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:1.5rem;
+  transition:border-color .2s;
+}
+.apply-card:hover{border-color:rgba(245,197,24,0.3)}
+.apply-card-flag{font-size:32px;margin-bottom:.75rem}
+.apply-card-name{font-weight:600;font-size:15px;margin-bottom:.75rem}
+.apply-step{
+  display:flex;gap:10px;
+  font-size:12px;
+  margin-bottom:6px;
+  line-height:1.5;
+  color:var(--muted);
+}
+.apply-step-num{
+  flex-shrink:0;
+  width:18px;height:18px;
+  background:rgba(245,197,24,0.1);
+  border:1px solid rgba(245,197,24,0.2);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:700;color:var(--accent);
+  margin-top:1px;
+}
+
+/* ── TIPS SECTION ── */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem;margin-top:2rem}
+.tip-card{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:1.5rem;
+  position:relative;
+  overflow:hidden;
+  transition:transform .2s,box-shadow .2s;
+}
+.tip-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.4)}
+.tip-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+}
+.tip-card:nth-child(1)::before{background:linear-gradient(90deg,var(--accent),var(--accent4))}
+.tip-card:nth-child(2)::before{background:linear-gradient(90deg,var(--accent2),#818cf8)}
+.tip-card:nth-child(3)::before{background:linear-gradient(90deg,var(--accent3),#34d399)}
+.tip-card:nth-child(4)::before{background:linear-gradient(90deg,var(--danger),var(--accent4))}
+.tip-card:nth-child(5)::before{background:linear-gradient(90deg,#818cf8,var(--accent2))}
+.tip-card:nth-child(6)::before{background:linear-gradient(90deg,#34d399,var(--accent3))}
+.tip-icon{font-size:28px;margin-bottom:.875rem}
+.tip-title{font-weight:600;font-size:15px;margin-bottom:.5rem}
+.tip-text{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ── FOOTER ── */
+footer{
+  text-align:center;
+  padding:3rem 1.5rem 4rem;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:13px;
+}
+footer a{color:var(--accent);text-decoration:none}
+
+/* ── DIVIDER ── */
+.divider{
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--border),transparent);
+  margin:0 1.5rem;
+}
+
+/* ── ANIMS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .6s ease both}
+.delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}.delay-4{animation-delay:.4s}
+
+/* ── MOBILE ── */
+@media(max-width:640px){
+  .card-header{padding:1.25rem;flex-direction:column;gap:.75rem}
+  .card-flag{font-size:40px}
+  .card-body{padding:1.25rem}
+  .card-rank{position:static;align-self:flex-start;margin-top:4px}
+  .pr-box,.profile-box,.lang-box,.verdict{padding:1rem}
+  .tab-content{padding:1.25rem}
+  .apply-card{padding:1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-up">🇳🇵 Complete Study Abroad Guide for Nepali Students</div>
+    <h1 class="fade-up delay-1">Your Roadmap<br>to Europe</h1>
+    <p class="fade-up delay-2">Honest, detailed research on 9 countries — covering tuition, work rights, PR pathways, language requirements, and whether you can self-apply. Tailored for your exact profile.</p>
+    <div class="profile-pill fade-up delay-3">
+      <span class="pill-item pill-ok">✓ IELTS 6.0–6.5</span>
+      <span class="pill-item pill-ok">✓ +2 Completed</span>
+      <span class="pill-item pill-warn">⚠ GPA 2.54</span>
+      <span class="pill-item pill-info">Goal: Study + Earn + PR</span>
+    </div>
+    <div class="scroll-hint fade-up delay-4">
+      <span>Scroll to explore</span>
+      <span>↓</span>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav" id="nav">
+  <button class="nav-btn active" onclick="scrollTo('s1',this)">🇬🇷 Greece</button>
+  <button class="nav-btn" onclick="scrollTo('s2',this)">🇮🇹 Italy</button>
+  <button class="nav-btn" onclick="scrollTo('s3',this)">🇳🇱 Netherlands</button>
+  <button class="nav-btn" onclick="scrollTo('s4',this)">🌍 Recommendations</button>
+  <button class="nav-btn" onclick="scrollTo('s5',this)">📊 Comparison</button>
+  <button class="nav-btn" onclick="scrollTo('s6',this)">✍️ Self-Apply</button>
+  <button class="nav-btn" onclick="scrollTo('s7',this)">💡 Pro Tips</button>
+</nav>
+
+<!-- ====== SECTION 1 — GREECE ITALY NETHERLANDS ====== -->
+<section class="section" id="s1">
+  <div class="section-header">
+    <div class="section-label">Your Target Countries</div>
+    <h2 class="section-title">Greece, Italy &amp; Netherlands</h2>
+    <p class="section-sub">Detailed honest breakdown for each country — the good, the bad, and the full PR timeline.</p>
+  </div>
+
+  <div class="countries-grid">
+
+    <!-- GREECE -->
+    <div class="country-card" id="greece">
+      <div class="card-header">
+        <div class="card-flag">🇬🇷</div>
+        <div class="card-title-group">
+          <div class="card-country">Greece</div>
+          <div class="card-tagline">Cheapest EU country · Limited English bachelor's · Weak job market</div>
+        </div>
+        <span class="card-rank rank-budget">⚠ Moderate</span>
+      </div>
+      <div class="card-body">
+        <div class="verdict verdict-budget-style">⚠️ Honest assessment: Greece is very affordable but has serious limitations for Nepali students wanting to work and build PR. The English program options are limited, the job market is weak, and Greek language is practically essential for employment. Best only if you're on an extremely tight budget.</div>
+        <div class="stats-row">
+          <div class="stat-box"><div class="stat-label">Tuition / yr</div><div class="stat-val">€1,500–€9K</div></div>
+          <div class="stat-box"><div class="stat-label">Living / mo</div><div class="stat-val">€500–€800</div></div>
+          <div class="stat-box"><div class="stat-label">Work (study)</div><div class="stat-val">20 hrs/wk</div></div>
+          <div class="stat-box"><div class="stat-label">Post-study stay</div><div class="stat-val">Job search permit</div></div>
+          <div class="stat-box"><div class="stat-label">PR timeline</div><div class="stat-val">5–7 years</div></div>
+          <div class="stat-box"><div class="stat-label">IELTS needed</div><div class="stat-val">5.5–6.0</div></div>
+        </div>
+        <div class="pros-cons">
+          <div class="pros-panel">
+            <div class="panel-title">✓ Good things</div>
+            <div class="li">Cheapest living costs in EU</div>
+            <div class="li">Affordable tuition at private English programs</div>
+            <div class="li">EU country — Schengen travel</div>
+            <div class="li">Warm climate, friendly culture</div>
+            <div class="li">No Greek needed for private English programs</div>
+            <div class="li">Beautiful Mediterranean lifestyle</div>
+          </div>
+          <div class="cons-panel">
+            <div class="panel-title">✗ Honest concerns</div>
+            <div class="li">Only ~16 English bachelor's at public unis</div>
+            <div class="li">Most public programs are in Greek only</div>
+            <div class="li">Very weak job market — high unemployment</div>
+            <div class="li">Greek language needed for daily life &amp; jobs</div>
+            <div class="li">Post-study job opportunities are very limited</div>
+            <div class="li">Economy still struggling — low wages</div>
+          </div>
+        </div>
+        <div class="profile-box">
+          <div class="profile-box-title">Your profile fit</div>
+          <div class="fit-line">IELTS 6.0: <span class="fit-ok">Accepted at private English-taught programs</span></div>
+          <div class="fit-line">GPA 2.54: <span class="fit-info">Acceptable for most private university programs</span></div>
+          <div class="fit-line">Self-apply: <span class="fit-ok">YES — apply directly to university websites</span></div>
+        </div>
+        <div class="pr-box">
+          <div class="pr-title">🎯 PR Pathway — Complete Timeline</div>
+          <div class="pr-time">⏱ Total to PR: 5–7 years from arrival</div>
+          <div class="pr-step"><div class="step-num">1</div><span>Complete bachelor's degree (3–4 years on student permit)</span></div>
+          <div class="pr-step"><div class="step-num">2</div><span>Convert student permit → work permit (need employer)</span></div>
+          <div class="pr-step"><div class="step-num">3</div><span>Work continuously for remaining years to reach 5 total legal years</span></div>
+          <div class="pr-step"><div class="step-num">4</div><span>Pass Greek language test (A2 minimum — basic level)</span></div>
+          <div class="pr-step"><div class="step-num">5</div><span>Show stable income ≥ €10,560/year</span></div>
+          <div class="pr-step"><div class="step-num">6</div><span>Apply for Long-Term Residence Permit at local Migration Service</span></div>
+          <div class="pr-note">📌 Student residence years count 100% toward Long-Term Residency PR. For Greek citizenship: 7 years required + higher language level. Self-apply: YES — visit local Migration Service (Ypiresia Allodaston). All applications and documents submitted there in person.</div>
+        </div>
+        <div class="lang-box">
+          <div class="lang-title">🗣 Language Requirement</div>
+          <div class="lang-text">English is enough only for private/international programs. Public Greek-taught bachelor's requires Greek B1/B2. For PR: Greek A2 minimum. For citizenship: Greek B1 required. For jobs: Greek is practically essential everywhere.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITALY -->
+    <div class="country-card" id="s2">
+      <div class="card-header">
+        <div class="card-flag">🇮🇹</div>
+        <div class="card-title-group">
+          <div class="card-country">Italy</div>
+          <div class="card-tagline">World-class universities · Quota work system complicates PR · Beautiful country</div>
+        </div>
+        <span class="card-rank rank-good">⚡ Moderate-Good</span>
+      </div>
+      <div class="card-body">
+        <div class="verdict verdict-good-style">⚡ Italy is culturally incredible with excellent universities and low public tuition. BUT the Decreto Flussi quota system makes converting a student permit to a work permit extremely difficult — this is the biggest risk. Italian language is practically required for employment.</div>
+        <div class="stats-row">
+          <div class="stat-box"><div class="stat-label">Tuition / yr</div><div class="stat-val">€900–€5K</div></div>
+          <div class="stat-box"><div class="stat-label">Living / mo</div><div class="stat-val">€700–€1,200</div></div>
+          <div class="stat-box"><div class="stat-label">Work (study)</div><div class="stat-val">20 hrs/wk</div></div>
+          <div class="stat-box"><div class="stat-label">Post-study stay</div><div class="stat-val">60 days → job</div></div>
+          <div class="stat-box"><div class="stat-label">PR timeline</div><div class="stat-val">7–9 years</div></div>
+          <div class="stat-box"><div class="stat-label">IELTS needed</div><div class="stat-val">6.0–6.5</div></div>
+        </div>
+        <div class="pros-cons">
+          <div class="pros-panel">
+            <div class="panel-title">✓ Good things</div>
+            <div class="li">World-class unis: Bologna, Milan Polytechnic, Sapienza</div>
+            <div class="li">Very low public tuition (income-based — can be €900/yr)</div>
+            <div class="li">Growing number of English-taught bachelor's</div>
+            <div class="li">Italian degree valued globally</div>
+            <div class="li">Rich culture, food, and Mediterranean lifestyle</div>
+            <div class="li">Job-seeker visa: 12 months after graduation to find work</div>
+          </div>
+          <div class="cons-panel">
+            <div class="panel-title">✗ Honest concerns</div>
+            <div class="li">Decreto Flussi: yearly work visa quotas are very limited — this is the biggest obstacle</div>
+            <div class="li">Bureaucracy is notoriously slow and complex</div>
+            <div class="li">Italian essential for real job market</div>
+            <div class="li">High unemployment especially in south Italy</div>
+            <div class="li">Student permit does NOT directly count toward PR without work permit</div>
+            <div class="li">PR timeline effectively becomes 7–9 years</div>
+          </div>
+        </div>
+        <div class="profile-box">
+          <div class="profile-box-title">Your profile fit</div>
+          <div class="fit-line">IELTS 6.0: <span class="fit-ok">Accepted at many Italian universities for English programs</span></div>
+          <div class="fit-line">GPA 2.54: <span class="fit-warn">Borderline — some universities need higher. Apply to multiple.</span></div>
+          <div class="fit-line">Self-apply: <span class="fit-ok">YES — via university portals or Universitaly.it platform</span></div>
+        </div>
+        <div class="pr-box">
+          <div class="pr-title">🎯 PR Pathway — Complete Timeline</div>
+          <div class="pr-time">⏱ Total to PR: 7–9 years realistically</div>
+          <div class="pr-step"><div class="step-num">1</div><span>Complete bachelor's in Italy (3–4 years)</span></div>
+          <div class="pr-step"><div class="step-num">2</div><span>Find a job within 60 days OR apply for 12-month job-seeker permit</span></div>
+          <div class="pr-step"><div class="step-num">3</div><span>Convert student permit → work permit via Decreto Flussi quota system (this is the hardest step — quotas are limited, competition is fierce)</span></div>
+          <div class="pr-step"><div class="step-num">4</div><span>Work legally; accumulate 5 continuous years total legal residence</span></div>
+          <div class="pr-step"><div class="step-num">5</div><span>Pass Italian language test (A2 level minimum)</span></div>
+          <div class="pr-step"><div class="step-num">6</div><span>Show income ≥ social allowance (~€7,000/yr)</span></div>
+          <div class="pr-step"><div class="step-num">7</div><span>Apply for Carta di Soggiorno (permanent residence) at local Questura</span></div>
+          <div class="pr-note">📌 Student years only count toward 5-year PR once converted to work permit — realistically 7–9 total years. Self-apply: YES — submit at local Questura (police headquarters). University applications via Universitaly.it or direct.</div>
+        </div>
+        <div class="lang-box">
+          <div class="lang-title">🗣 Language Requirement</div>
+          <div class="lang-text">Italian not required for English-taught programs, but practically essential for finding a job in Italy. For PR: Italian A2 test required. For citizenship: B1 level required. Start learning Italian from Year 1 — it will decide whether you can work there or not.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NETHERLANDS -->
+    <div class="country-card" id="s3">
+      <div class="card-header">
+        <div class="card-flag">🇳🇱</div>
+        <div class="card-title-group">
+          <div class="card-country">Netherlands</div>
+          <div class="card-tagline">Best English programs in Europe · Clearest PR path · Strong job market</div>
+        </div>
+        <span class="card-rank rank-best">⭐ Best of the Three</span>
+      </div>
+      <div class="card-body">
+        <div class="verdict verdict-best-style">⭐ The strongest of your three original choices. 2,000+ English programs, Dutch people speak excellent English, clear Orientation Year visa after graduation, and PR timeline is the most achievable. Higher cost but better outcomes.</div>
+        <div class="stats-row">
+          <div class="stat-box"><div class="stat-label">Tuition / yr</div><div class="stat-val">€9K–€20K</div></div>
+          <div class="stat-box"><div class="stat-label">Living / mo</div><div class="stat-val">€900–€1,300</div></div>
+          <div class="stat-box"><div class="stat-label">Work (study)</div><div class="stat-val">16 hrs/wk</div></div>
+          <div class="stat-box"><div class="stat-label">Post-study stay</div><div class="stat-val">1 yr Zoekjaar</div></div>
+          <div class="stat-box"><div class="stat-label">PR timeline</div><div class="stat-val">5 years</div></div>
+          <div class="stat-box"><div class="stat-label">IELTS needed</div><div class="stat-val">6.0–6.5</div></div>
+        </div>
+        <div class="pros-cons">
+          <div class="pros-panel">
+            <div class="panel-title">✓ Good things</div>
+            <div class="li">2,000+ programs fully in English — biggest in Europe</div>
+            <div class="li">Dutch are most English-fluent non-native speakers in Europe</div>
+            <div class="li">Clear 1-year Orientation Year (Zoekjaar) visa after graduation</div>
+            <div class="li">Strong tech, business, agriculture, logistics job market</div>
+            <div class="li">Student years count toward 5-year PR requirement</div>
+            <div class="li">Very high quality of life and safety</div>
+          </div>
+          <div class="cons-panel">
+            <div class="panel-title">✗ Honest concerns</div>
+            <div class="li">Tuition significantly higher than Greece/Italy/Germany</div>
+            <div class="li">Severe housing crisis — very hard to find accommodation</div>
+            <div class="li">High living costs, especially Amsterdam &amp; Rotterdam</div>
+            <div class="li">Dutch needed for long-term integration and PR civic exam</div>
+            <div class="li">Orientation Year does NOT count toward 5-year PR</div>
+            <div class="li">GPA 2.54 may limit access to competitive programs — apply to Universities of Applied Sciences (HBO)</div>
+          </div>
+        </div>
+        <div class="profile-box">
+          <div class="profile-box-title">Your profile fit</div>
+          <div class="fit-line">IELTS 6.0–6.5: <span class="fit-ok">Accepted at HBO (Universities of Applied Sciences). Research universities often need 6.5.</span></div>
+          <div class="fit-line">GPA 2.54: <span class="fit-warn">Low for research universities. Target HBO institutions — more holistic admissions.</span></div>
+          <div class="fit-line">Self-apply: <span class="fit-ok">YES — via Studielink.nl (the national application portal)</span></div>
+        </div>
+        <div class="pr-box">
+          <div class="pr-title">🎯 PR Pathway — Clearest of the Three</div>
+          <div class="pr-time">⏱ Total to PR: 5+ years from arrival (student time counts!)</div>
+          <div class="pr-step"><div class="step-num">1</div><span>Study at Dutch university (3–4 year bachelor's) — years count toward 5-yr PR</span></div>
+          <div class="pr-step"><div class="step-num">2</div><span>Apply for Orientation Year visa (Zoekjaar) — 1 year, no employer needed, find any job</span></div>
+          <div class="pr-step"><div class="step-num">3</div><span>Secure employment → apply for Highly Skilled Migrant (Kennismigrant) permit or work permit</span></div>
+          <div class="pr-step"><div class="step-num">4</div><span>Reach 5 continuous years of legal residence with no permit gaps</span></div>
+          <div class="pr-step"><div class="step-num">5</div><span>Pass civic integration exam (Dutch language A2/B1 + society knowledge)</span></div>
+          <div class="pr-step"><div class="step-num">6</div><span>Show stable sufficient income</span></div>
+          <div class="pr-step"><div class="step-num">7</div><span>Apply to IND (Immigration and Naturalisation Service) for indefinite residence permit</span></div>
+          <div class="pr-note">📌 The Orientation Year does NOT count toward the 5 years — only non-temporary permits count. Self-apply: YES — via IND (ind.nl). University application via Studielink.nl. Dutch citizenship: 5 years PR + renounce Nepali passport required.</div>
+        </div>
+        <div class="lang-box">
+          <div class="lang-title">🗣 Language Requirement</div>
+          <div class="lang-text">No Dutch needed to study — all programs are in English. Dutch recommended for daily life and jobs. For PR: civic integration exam in Dutch (A2–B1). For citizenship: Dutch B1 required + renounce Nepali passport. Good news: Dutch is relatively easy for English speakers.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end countries-grid -->
+</section>
+
+<div class="divider"></div>
+
+<!-- ====== SECTION 4 — RECOMMENDATIONS ====== -->
+<section class="section" id="s4">
+  <div class="section-header">
+    <div class="section-label">Honest Recommendations</div>
+    <h2 class="section-title">Other Countries — Detailed Guide</h2>
+    <p class="section-sub">Germany, Poland, Hungary, Czech Republic, Finland &amp; Norway — each with full PR pathway, costs, and profile fit.</p>
+  </div>
+
+  <div class="tabs-wrap">
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="showTab('de',this)">🇩🇪 Germany</button>
+      <button class="tab-btn" onclick="showTab('pl',this)">🇵🇱 Poland</button>
+      <button class="tab-btn" onclick="showTab('hu',this)">🇭🇺 Hungary</button>
+      <button class="tab-btn" onclick="showTab('cz',this)">🇨🇿 Czech Rep.</button>
+      <button class="tab-btn" onclick="showTab('fi',this)">🇫🇮 Finland</button>
+      <button class="tab-btn" onclick="showTab('no',this)">🇳🇴 Norway</button>
+    </div>
+
+    <!-- GERMANY TAB -->
+    <div id="tab-de" class="tab-content active">
+      <div class="verdict verdict-best-style">⭐ #1 Overall Recommendation — Free public education for ALL nationalities, world-class degree, strongest job market in Europe, and one of the clearest PR pathways. Worth learning German for.</div>
+      <div class="stats-row">
+        <div class="stat-box"><div class="stat-label">Tuition / yr (public)</div><div class="stat-val">FREE + €150–350/sem</div></div>
+        <div class="stat-box"><div class="stat-label">Living / mo</div><div class="stat-val">€800–€1,100</div></div>
+        <div class="stat-box"><div class="stat-label">Work (study)</div><div class="stat-val">120 days/yr full time</div></div>
+        <div class="stat-box"><div class="stat-label">Post-study visa</div><div class="stat-val">18 months job search</div></div>
+        <div class="stat-box"><div class="stat-label">Blocked account</div><div class="stat-val">€12,000–€13,500</div></div>
+        <div class="stat-box"><div class="stat-label">PR timeline</div><div class="stat-val">5 years total</div></div>
+      </div>
+      <div class="pros-cons">
+        <div class="pros-panel">
+          <div class="panel-title">✓ Best things</div>
+          <div class="li">Tuition-free at ALL public universities (including international students)</div>
+          <div class="li">World-class degree recognized globally — top 5 study destination worldwide</div>
+          <div class="li">Very strong tech, engineering, business, automotive job market</div>
+          <div class="li">18-month job seeker visa after graduation (no employer needed)</div>
+          <div class="li">DAAD scholarship available — Nepal IS eligible</div>
+          <div class="li">Large, supportive Nepali student community already established</div>
+          <div class="li">Heart of Europe — visit 9 neighboring countries easily</div>
+          <div class="li">Part-time work: €12–€18/hour wage, can cover living costs</div>
+        </div>
+        <div class="cons-panel">
+          <div class="panel-title">✗ Honest challenges</div>
+          <div class="li">Most public bachelor's are in German only (requires B2 German)</div>
+          <div class="li">Language prep takes 12–18 months before departure</div>
+          <div class="li">Studienkolleg (1-year foundation) required after +2 for public unis</div>
+          <div class="li">Blocked account: ~NPR 17–18 lakhs upfront needed</div>
+          <div class="li">German bureaucracy is slow and complex</div>
+          <div class="li">Severe housing shortage in major cities (Munich, Berlin, Hamburg)</div>
+        </div>
+      </div>
+      <div class="profile-box">
+        <div class="profile-box-title">Your profile fit</div>
+        <div class="fit-line">IELTS 6.0: <span class="fit-ok">Accepted for English-taught private university programs</span></div>
+        <div class="fit-line">GPA 2.54: <span class="fit-info">Private universities often accept 2.4+ GPA. Public unis judge by German language + Studienkolleg exam score — GPA matters less.</span></div>
+        <div class="fit-line">Self-apply: <span class="fit-ok">YES — via uni-assist.de for most public universities, or directly to private universities. All residence permits via local Ausländerbehörde.</span></div>
+      </div>
+      <div class="pr-box">
+        <div class="pr-title">🎯 PR Pathway — Complete Timeline</div>
+        <div class="pr-time">⏱ Total to PR: 7–9 years (including German prep in Nepal)</div>
+        <div class="pr-step"><div class="step-num">1</div><span>Learn German B1–B2 in Nepal (12–18 months, cost: NPR 70,000–1,20,000). Start NOW.</span></div>
+        <div class="pr-step"><div class="step-num">2</div><span>Apply to Studienkolleg (foundation year) via German Embassy — 1 year in Germany</span></div>
+        <div class="pr-step"><div class="step-num">3</div><span>Pass Feststellungsprüfung exam → enter bachelor's program (3–4 years)</span></div>
+        <div class="pr-step"><div class="step-num">4</div><span>Apply for 18-month job seeker residence permit after graduation</span></div>
+        <div class="pr-step"><div class="step-num">5</div><span>Secure employment → apply for EU Blue Card or regular work permit at local Ausländerbehörde</span></div>
+        <div class="pr-step"><div class="step-num">6</div><span>Accumulate 5 continuous years of legal residence (student + work time both count)</span></div>
+        <div class="pr-step"><div class="step-num">7</div><span>Apply for Niederlassungserlaubnis (Permanent Settlement Permit) — this is your PR</span></div>
+        <div class="pr-note">📌 German citizenship possible after 5 years with strong German skills. Self-apply: YES — all steps are DIY. Initial applications: German Embassy in Kathmandu. University: uni-assist.de. Residence permits: Ausländerbehörde in your city.</div>
+      </div>
+      <div class="lang-box">
+        <div class="lang-title">🗣 Language Reality — The Most Important Factor</div>
+        <div class="lang-text">German B2 required for public bachelor's (free education). English-only private universities cost €8,000–€20,000/yr — removes the free-tuition advantage. For PR: German B1 required. For citizenship: German B1 required. RECOMMENDATION: Invest 12–18 months learning German — it pays you back with FREE education for 3–4 years and dramatically higher job market access.</div>
+      </div>
+    </div>
+
+    <!-- POLAND TAB -->
+    <div id="tab-pl" class="tab-content">
+      <div class="verdict verdict-good-style">✓ Best budget-friendly EU option for your profile. Your IELTS 6.0 and GPA 2.54 are accepted at most Polish universities. Living costs are the lowest in EU. Growing IT and tech sector offers real job opportunities.</div>
+      <div class="stats-row">
+        <div class="stat-box"><div class="stat-label">Tuition / yr</div><div class="stat-val">€2,000–€5,000</div></div>
+        <div class="stat-box"><div class="stat-label">Living / mo</div><div class="stat-val">€400–€700</div></div>
+        <div class="stat-box"><div class="stat-label">Work (study)</div><div class="stat-val">20 hrs/wk</div></div>
+        <div class="stat-box"><div class="stat-label">Post-study stay</div><div class="stat-val">9 months job search</div></div>
+        <div class="stat-box"><div class="stat-label">PR timeline</div><div class="stat-val">5 years</div></div>
+        <div class="stat-box"><div class="stat-label">IELTS needed</div><div class="stat-val">5.5–6.0</div></div>
+      </div>
+      <div class="pros-cons">
+        <div class="pros-panel">
+          <div class="panel-title">✓ Best things</div>
+          <div class="li">Cheapest living costs in EU — Warsaw, Krakow, Wroclaw all affordable</div>
+          <div class="li">Many English bachelor's programs (IT, business, medicine, engineering)</div>
+          <div class="li">Accepts lower IELTS — many universities accept 5.5–6.0</div>
+          <div class="li">450+ universities and colleges — lots of program choices</div>
+          <div class="li">Polish Government Scholarship available — apply through Polish Embassy (Delhi)</div>
+          <div class="li">EU country — full Schengen zone access for travel</div>
+          <div class="li">Growing IT and tech economy — real jobs available</div>
+        </div>
+        <div class="cons-panel">
+          <div class="panel-title">✗ Honest challenges</div>
+          <div class="li">Polish language essential for most jobs and real integration</div>
+          <div class="li">Some reports of racism and discrimination against Asian students</div>
+          <div class="li">No Polish embassy in Nepal — must apply through Polish Embassy in New Delhi</div>
+          <div class="li">Visa process is longer due to Delhi embassy route</div>
+          <div class="li">Proof of funds required: ~€12,000 for student visa</div>
+          <div class="li">Very cold and long winters (November–March can be brutal)</div>
+          <div class="li">PR requires Polish language integration exam</div>
+        </div>
+      </div>
+      <div class="profile-box">
+        <div class="profile-box-title">Your profile fit</div>
+        <div class="fit-line">IELTS 6.0: <span class="fit-ok">Good — most Polish universities accept 5.5–6.0</span></div>
+        <div class="fit-line">GPA 2.54: <span class="fit-ok">Accepted at most institutions. Realistic admission target.</span></div>
+        <div class="fit-line">Self-apply: <span class="fit-ok">YES — apply directly to university portals. Residence permit via Voivodeship Office in your Polish city.</span></div>
+      </div>
+      <div class="pr-box">
+        <div class="pr-title">🎯 PR Pathway — Complete Timeline</div>
+        <div class="pr-time">⏱ Total to PR: 5–6 years from arrival</div>
+        <div class="pr-step"><div class="step-num">1</div><span>Apply to university directly online → receive acceptance letter</span></div>
+        <div class="pr-step"><div class="step-num">2</div><span>Apply for Polish student visa at Polish Embassy, New Delhi (not in Nepal — extra planning needed)</span></div>
+        <div class="pr-step"><div class="step-num">3</div><span>Complete bachelor's (3 years typical) — work 20 hrs/week during studies</span></div>
+        <div class="pr-step"><div class="step-num">4</div><span>After graduation: apply for 9-month temporary permit to look for work</span></div>
+        <div class="pr-step"><div class="step-num">5</div><span>Secure employment → apply for work permit at Voivodeship Office</span></div>
+        <div class="pr-step"><div class="step-num">6</div><span>Accumulate 5 continuous years of legal residence (student + work counts)</span></div>
+        <div class="pr-step"><div class="step-num">7</div><span>Pass Polish language test (B1 level) + civic knowledge</span></div>
+        <div class="pr-step"><div class="step-num">8</div><span>Apply for Long-Term EU Residence Permit at Voivodeship Office</span></div>
+        <div class="pr-note">📌 Self-apply: YES — all residence permit applications to the Urząd Wojewódzki (Voivodeship Office). University applications direct. Visa through Polish Embassy New Delhi.</div>
+      </div>
+      <div class="lang-box">
+        <div class="lang-title">🗣 Language Requirement</div>
+        <div class="lang-text">English is enough for admission and studying. Polish is NOT required for English programs. For PR: Polish language B1 test required. For jobs: Polish is strongly preferred by most employers — start learning from Year 1. Polish is moderately difficult but learnable — more regular than Czech or Hungarian.</div>
+      </div>
+    </div>
+
+    <!-- HUNGARY TAB -->
+    <div id="tab-hu" class="tab-content">
+      <div class="verdict verdict-budget-style">💡 Strategic option if you want to try for a fully-funded scholarship. Stipendium Hungaricum accepts students with lower GPAs and IELTS scores. Budapest is affordable and a vibrant EU city. Nepal IS on the eligible country list.</div>
+      <div class="stats-row">
+        <div class="stat-box"><div class="stat-label">Tuition / yr (self-pay)</div><div class="stat-val">€2,200–€8,000</div></div>
+        <div class="stat-box"><div class="stat-label">Scholarship option</div><div class="stat-val">Fully funded!</div></div>
+        <div class="stat-box"><div class="stat-label">Living / mo</div><div class="stat-val">€500–€800</div></div>
+        <div class="stat-box"><div class="stat-label">Work (study)</div><div class="stat-val">20 hrs/wk</div></div>
+        <div class="stat-box"><div class="stat-label">PR timeline</div><div class="stat-val">5 years</div></div>
+        <div class="stat-box"><div class="stat-label">IELTS needed</div><div class="stat-val">5.5–6.0</div></div>
+      </div>
+      <div class="pros-cons">
+        <div class="pros-panel">
+          <div class="panel-title">✓ Best things</div>
+          <div class="li">Stipendium Hungaricum: fully funded (tuition + housing + monthly stipend ~€150–€450)</div>
+          <div class="li">Accepts lower GPA and IELTS — your profile may qualify</div>
+          <div class="li">Budapest is affordable, beautiful, and a major EU city</div>
+          <div class="li">Many English programs: medicine, engineering, IT, business</div>
+          <div class="li">EU country — Schengen travel access</div>
+          <div class="li">Strong programs in STEM and medicine (global recognition)</div>
+        </div>
+        <div class="cons-panel">
+          <div class="panel-title">✗ Honest challenges</div>
+          <div class="li">Stipendium competition is fierce — not guaranteed with your profile</div>
+          <div class="li">Self-pay tuition is moderate but not cheap</div>
+          <div class="li">Hungarian language is extremely difficult — one of the hardest in the world</div>
+          <div class="li">Limited job market — Hungarian required for most employers</div>
+          <div class="li">Smaller economy — fewer high-paying jobs vs Germany/Netherlands</div>
+          <div class="li">PR and citizenship require Hungarian language exams</div>
+        </div>
+      </div>
+      <div class="profile-box">
+        <div class="profile-box-title">Your profile fit + Stipendium Hungaricum</div>
+        <div class="fit-line">IELTS 6.0: <span class="fit-ok">Good — Hungary accepts 5.5–6.0 for many programs</span></div>
+        <div class="fit-line">GPA 2.54: <span class="fit-warn">Low but Stipendium evaluates your motivation letter heavily. A strong SOP can compensate.</span></div>
+        <div class="fit-line">Stipendium deadline: <span class="fit-info">Usually February–March each year. Apply at stipendiumhungaricum.hu — Nepal IS eligible.</span></div>
+        <div class="fit-line">Self-apply: <span class="fit-ok">YES — Stipendium portal is fully online. Residence permits via NDGAP (immigration office).</span></div>
+      </div>
+      <div class="pr-box">
+        <div class="pr-title">🎯 PR Pathway — Complete Timeline</div>
+        <div class="pr-time">⏱ Total to PR: 5 years from arrival</div>
+        <div class="pr-step"><div class="step-num">1</div><span>Apply for Stipendium Hungaricum at stipendiumhungaricum.hu (Feb–March deadline each year) — select your preferred university and program</span></div>
+        <div class="pr-step"><div class="step-num">2</div><span>If awarded: full tuition waiver + dormitory + monthly stipend. If not: self-pay option available.</span></div>
+        <div class="pr-step"><div class="step-num">3</div><span>Complete 3–4 year bachelor's degree in Hungary</span></div>
+        <div class="pr-step"><div class="step-num">4</div><span>Find employment in Hungary (IT, tourism, teaching English, international companies)</span></div>
+        <div class="pr-step"><div class="step-num">5</div><span>Accumulate 5 continuous years of legal residence (student + work counts)</span></div>
+        <div class="pr-step"><div class="step-num">6</div><span>Pass basic Hungarian language and civic integration test (A2/B1)</span></div>
+        <div class="pr-step"><div class="step-num">7</div><span>Apply for Long-Term Residence Permit at the National Directorate-General for Aliens Policing (NDGAP)</span></div>
+        <div class="pr-note">📌 Self-apply: YES — all through online portals. Scholarship: stipendiumhungaricum.hu. Residence permits: enterhungary.gov.hu or local NDGAP office.</div>
+      </div>
+      <div class="lang-box">
+        <div class="lang-title">🗣 Language Requirement</div>
+        <div class="lang-text">English is sufficient for studying and daily life in Budapest — the city has a large international community. For PR: basic Hungarian integration exam (A2 level). Hungarian is notoriously difficult but you only need basics for PR. For citizenship: much higher level required.</div>
+      </div>
+    </div>
+
+    <!-- CZECH TAB -->
+    <div id="tab-cz" class="tab-content">
+      <div class="verdict verdict-good-style">✓ Underrated gem. Prague is one of Europe's most affordable and beautiful capitals. Charles University is globally ranked. Good English programs, growing tech sector, and manageable living costs. Czech is hard but not required for English programs.</div>
+      <div class="stats-row">
+        <div class="stat-box"><div class="stat-label">Tuition / yr (English)</div><div class="stat-val">€3,000–€10,000</div></div>
+        <div class="stat-box"><div class="stat-label">Living / mo</div><div class="stat-val">€450–€750</div></div>
+        <div class="stat-box"><div class="stat-label">Work (study)</div><div class="stat-val">20 hrs/wk</div></div>
+        <div class="stat-box"><div class="stat-label">Post-study stay</div><div class="stat-val">6–9 months</div></div>
+        <div class="stat-box"><div class="stat-label">PR timeline</div><div class="stat-val">5 years</div></div>
+        <div class="stat-box"><div class="stat-label">IELTS needed</div><div class="stat-val">6.0 (some waive it)</div></div>
+      </div>
+      <div class="pros-cons">
+        <div class="pros-panel">
+          <div class="panel-title">✓ Best things</div>
+          <div class="li">Cheapest living costs among EU capital cities</div>
+          <div class="li">Charles University — one of world's oldest and most prestigious universities</div>
+          <div class="li">Many English bachelor's programs: IT, business, medicine, engineering</div>
+          <div class="li">Some universities waive IELTS if you studied in English medium</div>
+          <div class="li">EU country — Schengen travel access</div>
+          <div class="li">Growing Prague tech and startup ecosystem — real tech jobs</div>
+          <div class="li">Czech-taught programs = FREE (even for internationals)</div>
+          <div class="li">Tuition fees are same for EU and non-EU in many programs</div>
+        </div>
+        <div class="cons-panel">
+          <div class="panel-title">✗ Honest challenges</div>
+          <div class="li">Nostrification (document recognition) process for +2 is complex and slow</div>
+          <div class="li">Czech language needed for free-tuition programs (and it's hard)</div>
+          <div class="li">Most jobs require Czech or German language</div>
+          <div class="li">Limited support infrastructure for Nepali/South Asian students vs Germany</div>
+          <div class="li">PR requires Czech B1 language exam</div>
+        </div>
+      </div>
+      <div class="profile-box">
+        <div class="profile-box-title">Your profile fit</div>
+        <div class="fit-line">IELTS 6.0: <span class="fit-ok">Good — accepted at most Czech English-taught programs</span></div>
+        <div class="fit-line">GPA 2.54: <span class="fit-ok">Acceptable for English bachelor's programs at most universities</span></div>
+        <div class="fit-line">IELTS waiver: <span class="fit-info">Some unis accept Medium of Instruction (MOI) certificate from your +2 school instead of IELTS</span></div>
+        <div class="fit-line">Self-apply: <span class="fit-ok">YES — apply directly to Czech universities. Deadlines: Feb–April for September intake. Residence permit via Czech Ministry of Interior (MOI).</span></div>
+      </div>
+      <div class="pr-box">
+        <div class="pr-title">🎯 PR Pathway — Complete Timeline</div>
+        <div class="pr-time">⏱ Total to PR: 5 years from arrival</div>
+        <div class="pr-step"><div class="step-num">1</div><span>Get your Nepali +2 certificate nostrified (recognized) — contact the Czech Ministry of Education (MEYS) or the specific university's international office</span></div>
+        <div class="pr-step"><div class="step-num">2</div><span>Apply directly to Czech university — submit by Feb–April for September start</span></div>
+        <div class="pr-step"><div class="step-num">3</div><span>Apply for Czech Long-Stay Student Visa at Czech Embassy (application center in Kathmandu or Delhi)</span></div>
+        <div class="pr-step"><div class="step-num">4</div><span>Complete bachelor's (3–4 years) — work 20 hrs/week</span></div>
+        <div class="pr-step"><div class="step-num">5</div><span>After graduation: get employment, transition to employee residence permit</span></div>
+        <div class="pr-step"><div class="step-num">6</div><span>Accumulate 5 continuous years legal residence (student + work)</span></div>
+        <div class="pr-step"><div class="step-num">7</div><span>Pass Czech B1 language exam + civic knowledge test</span></div>
+        <div class="pr-step"><div class="step-num">8</div><span>Apply for Long-Term EU Residence Permit at Ministry of Interior (MOI) — mvcr.cz</span></div>
+        <div class="pr-note">📌 Self-apply: YES — all DIY. University: direct application. Nostrification: MEYS or university. Visa: Czech Embassy. Residence permit: mvcr.cz (Czech Ministry of Interior online portal).</div>
+      </div>
+      <div class="lang-box">
+        <div class="lang-title">🗣 Language Requirement</div>
+        <div class="lang-text">English is fully sufficient for studying English-taught programs. Czech NOT required for English programs. For PR: Czech B1 language exam required. For citizenship: Czech B2 level. Start learning basic Czech from Year 1 — locals appreciate it and it opens the job market significantly.</div>
+      </div>
+    </div>
+
+    <!-- FINLAND TAB -->
+    <div id="tab-fi" class="tab-content">
+      <div class="verdict verdict-good-style">✓ Best quality of life on this list. World's happiest country, 30 hrs/week work rights (highest in EU), and PR after just 4 years. But tuition is high — focus on merit scholarships. Target Universities of Applied Sciences (AMK) with your profile.</div>
+      <div class="stats-row">
+        <div class="stat-box"><div class="stat-label">Tuition / yr</div><div class="stat-val">€8K–€18K</div></div>
+        <div class="stat-box"><div class="stat-label">Scholarship option</div><div class="stat-val">50–100% waiver possible</div></div>
+        <div class="stat-box"><div class="stat-label">Living / mo</div><div class="stat-val">€900–€1,200</div></div>
+        <div class="stat-box"><div class="stat-label">Work (study)</div><div class="stat-val">30 hrs/wk ← highest!</div></div>
+        <div class="stat-box"><div class="stat-label">PR timeline</div><div class="stat-val">4 years</div></div>
+        <div class="stat-box"><div class="stat-label">Post-study stay</div><div class="stat-val">2 years job search</div></div>
+      </div>
+      <div class="pros-cons">
+        <div class="pros-panel">
+          <div class="panel-title">✓ Best things</div>
+          <div class="li">World's #1 happiest country for 9 consecutive years</div>
+          <div class="li">30 hours/week work rights during study — highest in Europe</div>
+          <div class="li">2-year post-graduation job search permit — very generous</div>
+          <div class="li">PR after just 4 continuous years — fastest in this list</div>
+          <div class="li">Strong tech sector: Nokia, Rovio, hundreds of startups</div>
+          <div class="li">Many universities offer 50–100% tuition scholarships based on merit</div>
+          <div class="li">Excellent English fluency among Finns — daily life is easy</div>
+          <div class="li">Very safe, clean, organized society with strong social support</div>
+        </div>
+        <div class="cons-panel">
+          <div class="panel-title">✗ Honest challenges</div>
+          <div class="li">High tuition: €8,000–€18,000/yr for non-EU students</div>
+          <div class="li">High living costs — especially Helsinki (€900–€1,200/month)</div>
+          <div class="li">Finding part-time work without Finnish language is very hard</div>
+          <div class="li">Finnish language is one of the hardest in the world</div>
+          <div class="li">Very dark and cold winters — can affect mental health</div>
+          <div class="li">GPA 2.54 limits options at top research universities — target AMK (University of Applied Sciences)</div>
+        </div>
+      </div>
+      <div class="profile-box">
+        <div class="profile-box-title">Your profile fit</div>
+        <div class="fit-line">IELTS 6.0: <span class="fit-ok">Good for AMK (University of Applied Sciences). Research universities often need 6.5.</span></div>
+        <div class="fit-line">GPA 2.54: <span class="fit-warn">Below competitive for top universities. Target AMK institutions — more practical focus, holistic admissions.</span></div>
+        <div class="fit-line">Scholarships: <span class="fit-info">Apply for merit scholarship when applying — tied to admission score, not just GPA. Early Bird discounts also available.</span></div>
+        <div class="fit-line">Self-apply: <span class="fit-ok">YES — via Studyinfo.fi national portal. Residence permit via Enter Finland (enterfinland.fi) — fully online!</span></div>
+      </div>
+      <div class="pr-box">
+        <div class="pr-title">🎯 PR Pathway — One of Europe's Fastest</div>
+        <div class="pr-time">⏱ Total to PR: 4 years from arrival (fastest on this list!)</div>
+        <div class="pr-step"><div class="step-num">1</div><span>Apply via Studyinfo.fi — one central portal for all Finnish universities. Apply Jan for September intake.</span></div>
+        <div class="pr-step"><div class="step-num">2</div><span>Apply for Residence Permit for Studies via Enter Finland (enterfinland.fi) — fully online, no embassy visit needed</span></div>
+        <div class="pr-step"><div class="step-num">3</div><span>Complete 3–4 year bachelor's at AMK or university. Work 30 hrs/week during studies.</span></div>
+        <div class="pr-step"><div class="step-num">4</div><span>Apply for 2-year post-graduation job search permit at Migri (Finnish Immigration Service)</span></div>
+        <div class="pr-step"><div class="step-num">5</div><span>Get employment → transition to employee residence permit (A permit)</span></div>
+        <div class="pr-step"><div class="step-num">6</div><span>After 4 continuous years of legal residence → apply for Permanent Residence (P permit) at Migri</span></div>
+        <div class="pr-step"><div class="step-num">7</div><span>Pass YKI Finnish language test (A2.2 level — basic Finnish)</span></div>
+        <div class="pr-note">📌 Self-apply: YES — entirely through Enter Finland (enterfinland.fi) online portal. No embassy visit required for most steps. Finnish citizenship: 5 years after PR. This is the most digital-friendly immigration system in Europe.</div>
+      </div>
+      <div class="lang-box">
+        <div class="lang-title">🗣 Language Requirement</div>
+        <div class="lang-text">English is fully sufficient for studying. Finns speak excellent English — daily life is comfortable without Finnish. For PR: YKI Finnish test at A2 level (basic — not too hard). For citizenship: higher level required. Finding part-time jobs: Finnish greatly helps. Start with basics — Finnish may be hard but locals love when you try.</div>
+      </div>
+    </div>
+
+    <!-- NORWAY TAB -->
+    <div id="tab-no" class="tab-content">
+      <div class="verdict verdict-best-style">⭐ Most generous country: tuition is FREE for all nationalities at public universities AND wages are the highest in Europe (minimum ~NOK 310,000/yr ≈ €27,000). PR achievable after just 3 years of work. BUT living costs are very high — you need to earn to sustain.</div>
+      <div class="stats-row">
+        <div class="stat-box"><div class="stat-label">Tuition / yr (public)</div><div class="stat-val">FREE — all nationalities</div></div>
+        <div class="stat-box"><div class="stat-label">Living / mo</div><div class="stat-val">€1,200–€1,800</div></div>
+        <div class="stat-box"><div class="stat-label">Work (study)</div><div class="stat-val">20 hrs/wk</div></div>
+        <div class="stat-box"><div class="stat-label">Post-study stay</div><div class="stat-val">12 months job search</div></div>
+        <div class="stat-box"><div class="stat-label">Work salary min</div><div class="stat-val">~€27,000/yr</div></div>
+        <div class="stat-box"><div class="stat-label">PR after work</div><div class="stat-val">3 years work permit</div></div>
+      </div>
+      <div class="pros-cons">
+        <div class="pros-panel">
+          <div class="panel-title">✓ Best things</div>
+          <div class="li">Tuition FREE at all public universities — for ALL nationalities (same as Germany)</div>
+          <div class="li">Highest wages in Europe — minimum skilled worker salary ~€27,000/yr</div>
+          <div class="li">PR after just 3 years of continuous work permit — very fast</div>
+          <div class="li">Norwegians are near-universally English-fluent — no communication barrier</div>
+          <div class="li">Very safe, clean, high quality of life country</div>
+          <div class="li">English bachelor's programs available (~350 programs)</div>
+          <div class="li">Strong job sectors: oil and gas, tech, maritime, healthcare, fisheries</div>
+        </div>
+        <div class="cons-panel">
+          <div class="panel-title">✗ Honest challenges</div>
+          <div class="li">Highest living costs on this list — €1,200–€1,800/month minimum</div>
+          <div class="li">Proof of funds: NOK 126,357 (~€11,000) required for student visa</div>
+          <div class="li">Most English bachelor's programs limited — more options at master's level</div>
+          <div class="li">Norwegian language a big advantage for most jobs</div>
+          <div class="li">Not EU member (but is Schengen member — can travel EU freely)</div>
+          <div class="li">GPA 2.54 limits competitive programs — target smaller universities</div>
+          <div class="li">Very cold and dark winters — remote country, small population</div>
+        </div>
+      </div>
+      <div class="profile-box">
+        <div class="profile-box-title">Your profile fit</div>
+        <div class="fit-line">IELTS 6.0: <span class="fit-ok">Accepted at many Norwegian universities — especially smaller institutions</span></div>
+        <div class="fit-line">GPA 2.54: <span class="fit-warn">Below average for competitive programs. Target: HVL (Western Norway), Nord University, USN (University of South-Eastern Norway) — more accessible.</span></div>
+        <div class="fit-line">Self-apply: <span class="fit-ok">YES — apply directly to Norwegian universities. Residence permit via UDI (udi.no) — online portal.</span></div>
+      </div>
+      <div class="pr-box">
+        <div class="pr-title">🎯 PR Pathway — Fastest Work-Based PR</div>
+        <div class="pr-time">⏱ Total to PR: 6–7 years from arrival (3 study + 1 job search + 3 work)</div>
+        <div class="pr-step"><div class="step-num">1</div><span>Apply directly to Norwegian university — most accept applications Nov–March for August intake</span></div>
+        <div class="pr-step"><div class="step-num">2</div><span>Apply for Student Residence Permit at Norwegian Directorate of Immigration (UDI) — online at udi.no</span></div>
+        <div class="pr-step"><div class="step-num">3</div><span>Complete bachelor's (3 years typical) — work 20 hrs/week. Save money — costs are very high.</span></div>
+        <div class="pr-step"><div class="step-num">4</div><span>Apply for 12-month post-study job search permit (show NOK 139,347 in bank)</span></div>
+        <div class="pr-step"><div class="step-num">5</div><span>Get skilled worker job (salary ≥ NOK 310,070/yr) → apply for Skilled Worker permit</span></div>
+        <div class="pr-step"><div class="step-num">6</div><span>After 3 years on continuous work permit → apply for Permanent Settlement Permit</span></div>
+        <div class="pr-step"><div class="step-num">7</div><span>Pass Norwegian language test (A2 level) + civic knowledge</span></div>
+        <div class="pr-note">📌 Self-apply: YES — entirely through udi.no (UDI online portal). Norwegian is NOT EU — citizenship does NOT require renouncing Nepali passport (unlike some EU countries). Norwegian citizenship possible after 7 years.</div>
+      </div>
+      <div class="lang-box">
+        <div class="lang-title">🗣 Language Requirement</div>
+        <div class="lang-text">English is fully sufficient for studying and daily life — Norwegians speak excellent English. For jobs: Norwegian gives a significant advantage, especially outside Oslo. For PR: Norwegian A2 test required (basic level). Norwegian is actually one of the easier languages for speakers who know some English or German — shares many root words.</div>
+      </div>
+    </div>
+
+  </div><!-- end tabs-wrap -->
+</section>
+
+<div class="divider"></div>
+
+<!-- ====== SECTION 5 — COMPARISON TABLE ====== -->
+<section class="section" id="s5">
+  <div class="section-header">
+    <div class="section-label">Quick Reference</div>
+    <h2 class="section-title">All 9 Countries Compared</h2>
+    <p class="section-sub">Side-by-side comparison of every metric that matters for your decision.</p>
+  </div>
+  <div class="compare-table-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Tuition / yr</th>
+          <th>Living / mo</th>
+          <th>Work hrs</th>
+          <th>IELTS</th>
+          <th>PR Timeline</th>
+          <th>Language</th>
+          <th>Your GPA Fit</th>
+          <th>Self-Apply</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="flag-cell">🇩🇪</span> <span class="country-cell">Germany</span></td>
+          <td><span class="tag tag-green">FREE (public)</span></td>
+          <td>€800–€1,100</td>
+          <td>120 days/yr</td>
+          <td>6.0+</td>
+          <td><span class="tag tag-green">5–7 yrs</span></td>
+          <td><span class="tag tag-yellow">German B2</span></td>
+          <td><span class="tag tag-green">Yes (private)</span></td>
+          <td><span class="tag tag-green">Yes</span></td>
+        </tr>
+        <tr>
+          <td><span class="flag-cell">🇵🇱</span> <span class="country-cell">Poland</span></td>
+          <td>€2K–€5K</td>
+          <td>€400–€700</td>
+          <td>20 hrs/wk</td>
+          <td>5.5–6.0</td>
+          <td><span class="tag tag-green">5 yrs</span></td>
+          <td><span class="tag tag-blue">English OK to study</span></td>
+          <td><span class="tag tag-green">Yes</span></td>
+          <td><span class="tag tag-green">Yes</span></td>
+        </tr>
+        <tr>
+          <td><span class="flag-cell">🇭🇺</span> <span class="country-cell">Hungary</span></td>
+          <td>€2.2K–€8K<br><span class="tag tag-green">Scholarship: FREE</span></td>
+          <td>€500–€800</td>
+          <td>20 hrs/wk</td>
+          <td>5.5–6.0</td>
+          <td><span class="tag tag-green">5 yrs</span></td>
+          <td><span class="tag tag-blue">English OK to study</span></td>
+          <td><span class="tag tag-green">Yes</span></td>
+          <td><span class="tag tag-green">Yes</span></td>
+        </tr>
+        <tr>
+          <td><span class="flag-cell">🇨🇿</span> <span class="country-cell">Czech Rep.</span></td>
+          <td>€3K–€10K</td>
+          <td>€450–€750</td>
+          <td>20 hrs/wk</td>
+          <td>6.0 (some waive)</td>
+          <td><span class="tag tag-green">5 yrs</span></td>
+          <td><span class="tag tag-blue">English OK to study</span></td>
+          <td><span class="tag tag-green">Yes</span></td>
+          <td><span class="tag tag-green">Yes</span></td>
+        </tr>
+        <tr>
+          <td><span class="flag-cell">🇫🇮</span> <span class="country-cell">Finland</span></td>
+          <td>€8K–€18K<br><span class="tag tag-yellow">50–100% scholarship possible</span></td>
+          <td>€900–€1,200</td>
+          <td>30 hrs/wk ⭐</td>
+          <td>6.0–6.5</td>
+          <td><span class="tag tag-green">4 yrs ⭐</span></td>
+          <td><span class="tag tag-blue">English OK to study</span></td>
+          <td><span class="tag tag-yellow">AMK ok, uni harder</span></td>
+          <td><span class="tag tag-green">Yes (online)</span></td>
+        </tr>
+        <tr>
+          <td><span class="flag-cell">🇳🇴</span> <span class="country-cell">Norway</span></td>
+          <td><span class="tag tag-green">FREE (public)</span></td>
+          <td>€1,200–€1,800</td>
+          <td>20 hrs/wk</td>
+          <td>6.0–6.5</td>
+          <td><span class="tag tag-green">3 yrs work ⭐</span></td>
+          <td><span class="tag tag-blue">English OK to study</span></td>
+          <td><span class="tag tag-yellow">Smaller unis ok</span></td>
+          <td><span class="tag tag-green">Yes (udi.no)</span></td>
+        </tr>
+        <tr>
+          <td><span class="flag-cell">🇬🇷</span> <span class="country-cell">Greece</span></td>
+          <td>€1.5K–€9K</td>
+          <td>€500–€800</td>
+          <td>20 hrs/wk</td>
+          <td>5.5–6.0</td>
+          <td><span class="tag tag-yellow">5–7 yrs</span></td>
+          <td><span class="tag tag-red">Greek for public unis</span></td>
+          <td><span class="tag tag-green">Yes (private)</span></td>
+          <td><span class="tag tag-green">Yes</span></td>
+        </tr>
+        <tr>
+          <td><span class="flag-cell">🇮🇹</span> <span class="country-cell">Italy</span></td>
+          <td>€900–€5K (income-based)</td>
+          <td>€700–€1,200</td>
+          <td>20 hrs/wk</td>
+          <td>6.0–6.5</td>
+          <td><span class="tag tag-red">7–9 yrs (quota issue)</span></td>
+          <td><span class="tag tag-yellow">Italian for jobs</span></td>
+          <td><span class="tag tag-yellow">Borderline</span></td>
+          <td><span class="tag tag-green">Yes</span></td>
+        </tr>
+        <tr>
+          <td><span class="flag-cell">🇳🇱</span> <span class="country-cell">Netherlands</span></td>
+          <td>€9K–€20K</td>
+          <td>€900–€1,300</td>
+          <td>16 hrs/wk</td>
+          <td>6.0–6.5</td>
+          <td><span class="tag tag-green">5 yrs</span></td>
+          <td><span class="tag tag-blue">English OK (2000+ programs)</span></td>
+          <td><span class="tag tag-yellow">HBO ok, research harder</span></td>
+          <td><span class="tag tag-green">Yes (Studielink)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ====== SECTION 6 — SELF APPLY ====== -->
+<section class="section" id="s6">
+  <div class="section-header">
+    <div class="section-label">Can I Do It Myself?</div>
+    <h2 class="section-title">Yes — You Can Self-Apply</h2>
+    <p class="section-sub">Every country on this list allows you to self-apply without an agent. Here's how for each. Save your NPR 50,000–1,50,000 in agent fees.</p>
+  </div>
+
+  <div class="self-apply-grid">
+    <div class="apply-card">
+      <div class="apply-card-flag">🇩🇪</div>
+      <div class="apply-card-name">Germany — Step by step</div>
+      <div class="apply-step"><div class="apply-step-num">1</div><span>Research programs on daad.de or hochschulstart.de</span></div>
+      <div class="apply-step"><div class="apply-step-num">2</div><span>Apply via uni-assist.de (most public unis) or direct to private university website</span></div>
+      <div class="apply-step"><div class="apply-step-num">3</div><span>Open blocked account (Fintiba or Expatrio — fully online)</span></div>
+      <div class="apply-step"><div class="apply-step-num">4</div><span>Book German Embassy Kathmandu visa appointment online</span></div>
+      <div class="apply-step"><div class="apply-step-num">5</div><span>After arrival: register at Einwohnermeldeamt (city registration office)</span></div>
+      <div class="apply-step"><div class="apply-step-num">6</div><span>Get residence permit at local Ausländerbehörde</span></div>
+    </div>
+    <div class="apply-card">
+      <div class="apply-card-flag">🇳🇱</div>
+      <div class="apply-card-name">Netherlands — Step by step</div>
+      <div class="apply-step"><div class="apply-step-num">1</div><span>Browse programs at studyfinder.nl or university websites</span></div>
+      <div class="apply-step"><div class="apply-step-num">2</div><span>Apply via Studielink.nl — the national application portal</span></div>
+      <div class="apply-step"><div class="apply-step-num">3</div><span>University forwards your application to IND for MVV visa</span></div>
+      <div class="apply-step"><div class="apply-step-num">4</div><span>Collect MVV visa at Dutch Embassy Kathmandu or Delhi</span></div>
+      <div class="apply-step"><div class="apply-step-num">5</div><span>After arrival: IND appoints you for biometrics &amp; issues residence permit</span></div>
+      <div class="apply-step"><div class="apply-step-num">6</div><span>Register at municipality (gemeente) for BSN number</span></div>
+    </div>
+    <div class="apply-card">
+      <div class="apply-card-flag">🇵🇱</div>
+      <div class="apply-card-name">Poland — Step by step</div>
+      <div class="apply-step"><div class="apply-step-num">1</div><span>Browse programs at irk.irk.pl or directly at university websites</span></div>
+      <div class="apply-step"><div class="apply-step-num">2</div><span>Apply directly to university online, receive acceptance letter</span></div>
+      <div class="apply-step"><div class="apply-step-num">3</div><span>Apply for Polish National Visa (D) at Polish Embassy, New Delhi (no embassy in Nepal)</span></div>
+      <div class="apply-step"><div class="apply-step-num">4</div><span>After arrival: apply for temporary residence permit at Voivodeship Office within 60 days</span></div>
+      <div class="apply-step"><div class="apply-step-num">5</div><span>Register at local university as enrolled student</span></div>
+    </div>
+    <div class="apply-card">
+      <div class="apply-card-flag">🇭🇺</div>
+      <div class="apply-card-name">Hungary (Stipendium) — Step by step</div>
+      <div class="apply-step"><div class="apply-step-num">1</div><span>Register at stipendiumhungaricum.hu (deadline: Feb–March each year)</span></div>
+      <div class="apply-step"><div class="apply-step-num">2</div><span>Select country (Nepal), university and program preference</span></div>
+      <div class="apply-step"><div class="apply-step-num">3</div><span>Submit: SOP, recommendation letters, transcripts, IELTS, passport</span></div>
+      <div class="apply-step"><div class="apply-step-num">4</div><span>If awarded: receive university admission + scholarship letter</span></div>
+      <div class="apply-step"><div class="apply-step-num">5</div><span>Apply for student visa at Hungarian Embassy (via Delhi or online)</span></div>
+      <div class="apply-step"><div class="apply-step-num">6</div><span>After arrival: register at NDGAP (enterhungary.gov.hu) for residence permit</span></div>
+    </div>
+    <div class="apply-card">
+      <div class="apply-card-flag">🇫🇮</div>
+      <div class="apply-card-name">Finland — Step by step</div>
+      <div class="apply-step"><div class="apply-step-num">1</div><span>Browse and apply at Studyinfo.fi (January application round for September)</span></div>
+      <div class="apply-step"><div class="apply-step-num">2</div><span>Receive admission decision + apply for scholarship if available</span></div>
+      <div class="apply-step"><div class="apply-step-num">3</div><span>Apply for Residence Permit for Studies at enterfinland.fi — FULLY ONLINE (no embassy visit!)</span></div>
+      <div class="apply-step"><div class="apply-step-num">4</div><span>Biometrics appointment at Finnish Embassy (Delhi has VFS center)</span></div>
+      <div class="apply-step"><div class="apply-step-num">5</div><span>Receive residence permit card by mail or collect after arrival</span></div>
+      <div class="apply-step"><div class="apply-step-num">6</div><span>Register at DVV (Population Register Centre) after arriving in Finland</span></div>
+    </div>
+    <div class="apply-card">
+      <div class="apply-card-flag">🇳🇴</div>
+      <div class="apply-card-name">Norway — Step by step</div>
+      <div class="apply-step"><div class="apply-step-num">1</div><span>Apply directly to Norwegian university (most Nov–March deadline)</span></div>
+      <div class="apply-step"><div class="apply-step-num">2</div><span>Apply for Student Residence Permit at udi.no — mostly online</span></div>
+      <div class="apply-step"><div class="apply-step-num">3</div><span>Biometrics at Norwegian Embassy (New Delhi — no Norwegian embassy in Nepal)</span></div>
+      <div class="apply-step"><div class="apply-step-num">4</div><span>After arrival: collect residence permit at local police station (Politiet)</span></div>
+      <div class="apply-step"><div class="apply-step-num">5</div><span>Register at National Population Register (Folkeregisteret)</span></div>
+      <div class="apply-step"><div class="apply-step-num">6</div><span>Open bank account, get ID number (personnummer)</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ====== SECTION 7 — PRO TIPS ====== -->
+<section class="section" id="s7">
+  <div class="section-header">
+    <div class="section-label">Important Advice</div>
+    <h2 class="section-title">Pro Tips for Nepali Students</h2>
+    <p class="section-sub">Hard-earned advice that most consultants won't tell you.</p>
+  </div>
+
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🎯</div>
+      <div class="tip-title">Your Best Country Ranking (for your profile)</div>
+      <div class="tip-text">Based on IELTS 6.0 + GPA 2.54 + goal of study+earn+PR: <strong>1. Germany</strong> (if you learn German), <strong>2. Norway</strong> (if you have funds), <strong>3. Poland</strong> (easiest entry), <strong>4. Hungary</strong> (try for scholarship), <strong>5. Czech Republic</strong>, <strong>6. Finland</strong> (target AMK), <strong>7. Netherlands</strong> (target HBO), <strong>8. Italy</strong>, <strong>9. Greece</strong>.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💰</div>
+      <div class="tip-title">Never Rely on Part-Time Work for Living Costs</div>
+      <div class="tip-text">Part-time job income is unpredictable — it takes months to find work after arrival. Always have 6 months of living expenses saved before you go. Budget at least NPR 8–15 lakhs as emergency fund on top of the visa requirement money.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📝</div>
+      <div class="tip-title">Write a Powerful Statement of Purpose (SOP)</div>
+      <div class="tip-text">With GPA 2.54, your SOP is your most important tool. Explain your career goals clearly, why you chose this specific country and program, what you've learned from your work experience (Biznity / IT Manager role), and your concrete plan. A great SOP can overcome a lower GPA.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🗣</div>
+      <div class="tip-title">Start Learning the Local Language NOW</div>
+      <div class="tip-text">Every country requires some language for PR. German or Norwegian will triple your employment options. Even Polish or Czech basics help enormously. Use free resources: Duolingo (Polish, Czech, Norwegian), Goethe Institut Kathmandu (German), YouTube channels. Start 12 months before applying.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">⚠️</div>
+      <div class="tip-title">NEVER Break Your Residence Permit</div>
+      <div class="tip-text">Any gap in your legal residence resets your PR clock. Never let your permit expire — renew 2–3 months before the expiry date. Never stay illegally even for one day. Never travel and come back with an expired permit. The PR countdown only works with continuous legal residence.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🏦</div>
+      <div class="tip-title">Blocked Account / Proof of Funds — Plan Early</div>
+      <div class="tip-text">Germany needs NPR 17–18 lakhs blocked, Norway needs ~NPR 15 lakhs, Netherlands needs bank proof. These amounts must sit in your account before visa. Start saving NOW, 1–2 years before you plan to leave. Look into whether a family sponsor (Verpflichtungserklärung in Germany) is an option.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p style="margin-bottom:.5rem">This guide was researched specifically for your profile: IELTS 6.0–6.5 · +2 completed · GPA 2.54 · Goal: Study, Earn &amp; PR</p>
+  <p style="margin-bottom:.5rem">All information current as of 2025–2026 · Always verify with official embassy and university websites before applying</p>
+  <p>Made with care for Nepali students 🇳🇵 → 🌍</p>
+</footer>
+
+<script>
+function scrollTo(id, btn) {
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Update active nav on scroll
+const sections = ['s1','s2','s3','s4','s5','s6','s7'];
+const navBtns = document.querySelectorAll('.nav-btn');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 120) current = id;
+  });
+  navBtns.forEach((btn, i) => {
+    btn.classList.toggle('active', i === sections.indexOf(current));
+  });
+});
+
+// Intersection observer for fade-up on cards
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {threshold: 0.08});
+
+document.querySelectorAll('.country-card,.apply-card,.tip-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity .5s ease, transform .5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
